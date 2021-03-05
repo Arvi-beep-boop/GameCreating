@@ -21,17 +21,27 @@ func calculate_move_velocity(
 	direction: Vector2,
 	speed: Vector2
 	) -> Vector2:
+	direction.normalized()
 	var new_velocity: = linear_velocity
 	new_velocity.x = speed.x * direction.x
 	new_velocity.y += gravity * get_physics_process_delta_time()
+	
 	if direction.y == -1.0:
 		new_velocity.y = speed.y * direction.y
+	
 	return new_velocity
 	
 	
 func _process(delta):
 	if Input.is_action_pressed("move_right"):
-		$AnimationPlayer.play("move")
+		$SLIME_FRAMES_ROW.flip_h = false
+		$AnimationPlayer.play("moveRight")
+		
+	elif Input.is_action_pressed("move_left"):
+		$SLIME_FRAMES_ROW.flip_h = true
+		$AnimationPlayer.play("moveLeft")
+		
 	else:
 		$AnimationPlayer.play("idle")
+		
 
