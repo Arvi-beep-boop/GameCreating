@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://src/Actor/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Coin/Coin.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/platform_metroidvania asset pack v1.01/tiles and background_foreground/background.png" type="Texture" id=3]
-[ext_resource path="res://assets/Custom/EnviromentTiles.png" type="Texture" id=4]
+[ext_resource path="res://assets/OwnTiles/EnviromentTiles.png" type="Texture" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -103,8 +104,6 @@ texture = ExtResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 58, 123 )
-speed = Vector2( 150, 400 )
-gravity = 1800.0
 
 [node name="GrassTiles" type="TileMap" parent="."]
 tile_set = SubResource( 8 )
@@ -112,3 +111,6 @@ cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
 format = 1
 tile_data = PoolIntArray( 262144, 2, 65539, 262160, 2, 65539, 327680, 2, 65536, 327696, 2, 65537, 393216, 2, 65536, 393232, 2, 65537, 458752, 2, 65536, 458768, 2, 65537, 524288, 2, 65536, 524304, 2, 65537, 589824, 2, 65536, 589825, 2, 131072, 589827, 2, 131072, 589833, 2, 4, 589836, 2, 131075, 589840, 2, 65537, 655360, 2, 65538, 655361, 2, 1, 655362, 2, 1, 655363, 2, 1, 655364, 2, 1, 655365, 2, 1, 655366, 2, 1, 655367, 2, 1, 655368, 2, 1, 655369, 2, 1, 655370, 2, 1, 655371, 2, 1, 655372, 2, 1, 655373, 2, 1, 655374, 2, 1, 655375, 2, 1, 655376, 2, 65537, 720896, 2, 65536, 720897, 2, 65536, 720898, 2, 65536, 720899, 2, 65536, 720900, 2, 65536, 720901, 2, 65536, 720902, 2, 65536, 720903, 2, 65536, 720904, 2, 65536, 720905, 2, 65536, 720906, 2, 65536, 720907, 2, 65536, 720908, 2, 65536, 720909, 2, 65536, 720910, 2, 65536, 720911, 2, 65536, 720912, 2, 65536 )
+
+[node name="Coin" parent="." instance=ExtResource( 2 )]
+position = Vector2( 173.239, 150.686 )

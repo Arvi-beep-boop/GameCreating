@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CoinPoint.png-5573c8aa382ed90ba65397f151c04aa8.stex"
+path="res://.import/CoinPoint.png-147c11efa87b1a5dcf0a36628551910d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Custom/CoinPoint.png"
-dest_files=[ "res://.import/CoinPoint.png-5573c8aa382ed90ba65397f151c04aa8.stex" ]
+source_file="res://assets/OwnTiles/CoinPoint.png"
+dest_files=[ "res://.import/CoinPoint.png-147c11efa87b1a5dcf0a36628551910d.stex" ]
 
 [params]
 

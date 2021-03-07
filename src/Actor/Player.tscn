@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/assets/Pack/GIF/SLIME_FRAMES_ROW.png" type="Texture" id=1]
 [ext_resource path="res://src/Actor/Player.gd" type="Script" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6, 5 )
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 4.35365
+height = 6.79275
 
 [sub_resource type="Animation" id=2]
 resource_name = "idle"
@@ -21,6 +22,23 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ 10, 12, 13 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "jump"
+length = 0.35
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("SLIME_FRAMES_ROW:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.00117736, 0.0392429, 0.0773085 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 3, 5, 9 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -41,22 +59,22 @@ tracks/0/keys = {
 }
 
 [node name="Player" type="KinematicBody2D"]
+position = Vector2( 1.08456, 3.8147e-06 )
 collision_mask = 8
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-speed = Vector2( 200, 0 )
 
 [node name="SLIME_FRAMES_ROW" type="Sprite" parent="."]
+position = Vector2( -1.08456, 0.0834274 )
 texture = ExtResource( 1 )
 hframes = 22
-frame = 2
+frame = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1, 0 )
+position = Vector2( -1.08344, 0.750847 )
+rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/idle = SubResource( 2 )
+anims/jump = SubResource( 4 )
 anims/move = SubResource( 3 )

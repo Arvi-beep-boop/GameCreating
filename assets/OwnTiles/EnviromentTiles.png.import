@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CoinPointPink.png-c0c29343f391b35b777a14f5ce95f89e.stex"
+path="res://.import/EnviromentTiles.png-5f49c3c4567b039abae0350307f51e8e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Custom/CoinPointPink.png"
-dest_files=[ "res://.import/CoinPointPink.png-c0c29343f391b35b777a14f5ce95f89e.stex" ]
+source_file="res://assets/OwnTiles/EnviromentTiles.png"
+dest_files=[ "res://.import/EnviromentTiles.png-5f49c3c4567b039abae0350307f51e8e.stex" ]
 
 [params]
 

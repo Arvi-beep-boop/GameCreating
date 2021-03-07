@@ -1,50 +1,54 @@
 extends Actor
 
-onready var animationPlayer = $AnimationPlayer
+
 
 func _physics_process(delta: float) -> void:
-	var direction: = get_direction()
-	velocity = calculate_move_velocity(velocity, direction, speed)
+	velocity = process_movement(velocity)
+	
 	velocity = move_and_slide(velocity, FLOOR_NORMAL)
+	velocity.x = lerp(velocity.x,0,0.1)
 	
-	
-	
-func get_direction() -> Vector2:
-	var direction = Vector2()
-	direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+func process_movement(velocity: Vector2) -> Vector2:
+	if not is_on_floor():
+		is_jumping = true
+		
+		velocity.y = velocity.y
+		if velocity.y < -200: #going up
+			$AnimationPlayer.play("jump")
+		elif velocity.y < -10:
+			$AnimationPlayer.play("jumploop")
+		elif velocity.y > -50 && velocity.y < 10.0: #transition
+			$AnimationPlayer.play("landing")
+		else: #falling
+			$AnimationPlayer.play("fallloop")
+	else:
+		is_jumping = false
 	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		direction.y = -1.0
-	else:
-		direction.y = 0.0
-	
-	return direction
-	
-func calculate_move_velocity(
-	linear_velocity: Vector2,
-	direction: Vector2,
-	speed: Vector2
-	) -> Vector2:
-	var new_velocity: = linear_velocity
-	new_velocity.x = speed.x * direction.x
-	new_velocity.y += gravity * get_physics_process_delta_time()
-	
-	if direction.y <= -1.0:
-		new_velocity.y = speed.y * direction.y
-	
-	return new_velocity
-	
-	
-func _process(delta):
+		velocity.y = jumpforce
+		# We are jumping!
+		is_jumping = true
+		
 	if Input.is_action_pressed("move_right"):
+		velocity.x = speed
 		$SLIME_FRAMES_ROW.flip_h = false
-		$AnimationPlayer.play("move")
-		
+		# Check if we are jumping instead of if we are
+		# on the floor
+		if not is_jumping:
+			$AnimationPlayer.play("move")
 	elif Input.is_action_pressed("move_left"):
+		velocity.x = -speed
 		$SLIME_FRAMES_ROW.flip_h = true
-		$AnimationPlayer.play("move")
-		
+		# Same here
+		if not is_jumping:
+			$AnimationPlayer.play("move") 
 	else:
-		$AnimationPlayer.play("idle")
-		
+		# Same here
+		if not is_jumping:
+			$AnimationPlayer.play("idle")
+			
+	velocity.y = velocity.y + gravity
+	return velocity
+
+
 
