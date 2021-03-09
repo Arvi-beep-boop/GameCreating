@@ -24,7 +24,7 @@ tracks/0/keys = {
 "values": [ 10, 12, 13 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "jump"
 length = 0.35
 step = 0.05
@@ -41,8 +41,7 @@ tracks/0/keys = {
 "values": [ 3, 5, 9 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "move"
+[sub_resource type="Animation" id=4]
 length = 0.5
 loop = true
 tracks/0/type = "value"
@@ -62,12 +61,13 @@ tracks/0/keys = {
 position = Vector2( 1.08456, 3.8147e-06 )
 collision_mask = 8
 script = ExtResource( 2 )
+jumpforce = -550
 
 [node name="SLIME_FRAMES_ROW" type="Sprite" parent="."]
 position = Vector2( -1.08456, 0.0834274 )
 texture = ExtResource( 1 )
 hframes = 22
-frame = 9
+frame = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1.08344, 0.750847 )
@@ -76,5 +76,5 @@ shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/idle = SubResource( 2 )
-anims/jump = SubResource( 4 )
-anims/move = SubResource( 3 )
+anims/jump = SubResource( 3 )
+anims/move = SubResource( 4 )
