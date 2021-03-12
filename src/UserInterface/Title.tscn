@@ -1,0 +1,13 @@
+[gd_scene format=2]
+
+[node name="Title" type="Label"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -26.0
+margin_top = 33.7029
+margin_right = 26.0
+margin_bottom = 47.7029
+text = "Evernite"
+__meta__ = {
+"_edit_use_anchors_": false
+}

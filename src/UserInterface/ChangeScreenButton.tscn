@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/UserInterface/Title.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/OwnTiles/OwnTiles/BUTTon.png" type="Texture" id=2]
+[ext_resource path="res://src/UserInterface/PlayButton.gd" type="Script" id=3]
+
+[node name="ChangeScreenButton" type="TextureButton"]
+margin_right = 80.0
+margin_bottom = 32.0
+texture_normal = ExtResource( 2 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayText" parent="." instance=ExtResource( 1 )]
+margin_left = -27.8413
+margin_top = 2.5996
+margin_right = 24.1587
+margin_bottom = 27.5996
+size_flags_horizontal = 3
+size_flags_vertical = 6
+custom_colors/font_color = Color( 0.129412, 1, 0.815686, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Play"
+[connection signal="button_up" from="." to="." method="_on_button_up"]

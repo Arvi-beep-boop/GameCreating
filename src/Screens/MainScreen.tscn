@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/UserInterface/Title.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/UserInterface/ChangeScreenButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/UserInterface/QuitButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/platform_metroidvania asset pack v1.01/tiles and background_foreground/background.png" type="Texture" id=4]
+[ext_resource path="res://assets/pixel_theme.tres" type="Theme" id=5]
+[ext_resource path="res://assets/OwnTiles/OwnTiles/BUTTonPressed.png" type="Texture" id=6]
+
+[node name="MainScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" parent="." instance=ExtResource( 1 )]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -63.9864
+margin_top = -73.1814
+margin_right = 40.0135
+margin_bottom = -48.1814
+rect_scale = Vector2( 1.2, 1.2 )
+custom_colors/font_color = Color( 0.0509804, 0.635294, 0.227451, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -40.0
+margin_top = -34.0
+margin_right = 40.0
+margin_bottom = 34.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" parent="VBoxContainer" instance=ExtResource( 2 )]
+texture_hover = ExtResource( 6 )
+next_scene_path = "res://src/Levels/LevelTemplate.tscn"
+
+[node name="QuitButton" parent="VBoxContainer" instance=ExtResource( 3 )]
+texture_hover = ExtResource( 6 )
