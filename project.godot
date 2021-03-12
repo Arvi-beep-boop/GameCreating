@@ -25,6 +25,10 @@ run/main_scene="res://src/Screens/MainScreen.tscn"
 boot_splash/use_filter=false
 config/icon="res://icon.png"
 
+[autoload]
+
+PlayerData="*res://Autoload/PlayerData.tscn"
+
 [compression]
 
 formats/zstd/compression_level=1
