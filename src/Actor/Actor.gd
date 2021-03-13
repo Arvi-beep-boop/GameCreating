@@ -3,9 +3,8 @@ class_name Actor
 
 var FLOOR_NORMAL = Vector2.UP
 
-export var speed = 140
-export var gravity = 35
-export var jumpforce = -600
+export var gravity = 40
+export var jumpforce = -5
 
 export var is_jumping = false
 
