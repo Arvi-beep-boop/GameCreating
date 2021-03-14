@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/pixel_theme.tres" type="Theme" id=1]
+[ext_resource path="res://src/UserInterface/QuitButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/UserInterface/Title.tscn" type="PackedScene" id=3]
+
+[node name="UserInterface" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -61.7269
+margin_top = 0.420448
+margin_right = 20.2731
+margin_bottom = 25.4204
+rect_scale = Vector2( 0.5, 0.5 )
+text = "Score: %s"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseOverlay" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.196078 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" parent="PauseOverlay" instance=ExtResource( 3 )]
+margin_left = -33.6025
+margin_top = 16.182
+margin_right = 33.3975
+margin_bottom = 41.182
+custom_colors/font_color = Color( 0, 0.431373, 0.137255, 1 )
+custom_colors/font_outline_modulate = Color( 0.0313726, 0.0313726, 0.0313726, 1 )
+custom_colors/font_color_shadow = Color( 0.00392157, 0.00784314, 0.00392157, 1 )
+text = "Pause"
+
+[node name="PauseMenu" type="VBoxContainer" parent="PauseOverlay"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -42.0
+margin_top = -30.0
+margin_right = 38.0
+margin_bottom = 38.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitButton" parent="PauseOverlay/PauseMenu" instance=ExtResource( 2 )]
+margin_top = 0.0
+margin_bottom = 32.0
+
+[node name="MainMenu" type="TextureButton" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
