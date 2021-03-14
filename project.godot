@@ -20,8 +20,10 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Platformer"
+config/name="Evernite"
 run/main_scene="res://src/Screens/MainScreen.tscn"
+run/disable_stdout=true
+run/disable_stderr=true
 boot_splash/use_filter=false
 config/icon="res://icon.png"
 
@@ -33,17 +35,13 @@ PlayerData="*res://Autoload/PlayerData.tscn"
 
 formats/zstd/compression_level=1
 
-[debug]
-
-settings/stdout/print_fps=true
-
 [display]
 
 window/size/width=320
 window/size/height=180
 window/size/test_width=1280
 window/size/test_height=720
-window/vsync/use_vsync=false
+window/vsync/vsync_via_compositor=true
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
@@ -97,6 +95,11 @@ jump={
 2d_physics/layer_2="enemys"
 2d_physics/layer_3="coins"
 2d_physics/layer_4="world"
+
+[physics]
+
+2d/physics_engine="GodotPhysics"
+2d/thread_model=2
 
 [rendering]
 
