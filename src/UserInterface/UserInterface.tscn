@@ -1,31 +1,41 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/pixel_theme.tres" type="Theme" id=1]
 [ext_resource path="res://src/UserInterface/QuitButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/UserInterface/Title.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/UserInterface/RetryButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/UserInterface/ChangeScreenButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/UserInterface/UserInterface.gd" type="Script" id=6]
+[ext_resource path="res://assets/OwnTiles/OwnTiles/BUTTonPressed.png" type="Texture" id=7]
 
 [node name="UserInterface" type="Control"]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
+[node name="Score" type="Label" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -61.7269
-margin_top = 0.420448
-margin_right = 20.2731
-margin_bottom = 25.4204
-rect_scale = Vector2( 0.5, 0.5 )
+margin_left = -99.0607
+margin_top = -0.0606613
+margin_right = 31.9393
+margin_bottom = 24.9393
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Score: %s"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="PauseOverlay" type="ColorRect" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0.196078 )
@@ -33,7 +43,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Title" parent="PauseOverlay" instance=ExtResource( 3 )]
+[node name="Pause" parent="PauseOverlay" instance=ExtResource( 3 )]
 margin_left = -33.6025
 margin_top = 16.182
 margin_right = 33.3975
@@ -56,13 +66,57 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="QuitButton" parent="PauseOverlay/PauseMenu" instance=ExtResource( 2 )]
-margin_top = 0.0
-margin_bottom = 32.0
+[node name="ChangeScreenButton" parent="PauseOverlay/PauseMenu" instance=ExtResource( 5 )]
+texture_hover = ExtResource( 7 )
+next_scene_path = "res://src/Screens/MainScreen.tscn"
 
-[node name="MainMenu" type="TextureButton" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="Label" type="Label" parent="PauseOverlay/PauseMenu/ChangeScreenButton"]
+margin_left = 8.10602
+margin_top = 9.38431
+margin_right = 115.106
+margin_bottom = 34.3843
+rect_scale = Vector2( 0.6, 0.6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Main Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RetryButton" parent="PauseOverlay/PauseMenu" instance=ExtResource( 4 )]
+margin_top = 36.0
+margin_bottom = 68.0
+texture_hover = ExtResource( 7 )
+
+[node name="Retry" type="Label" parent="PauseOverlay/PauseMenu/RetryButton"]
+margin_left = 10.6191
+margin_top = 3.52575
+margin_right = 75.6191
+margin_bottom = 28.5257
+rect_scale = Vector2( 0.9, 0.9 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Retry"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitButton" parent="PauseOverlay/PauseMenu" instance=ExtResource( 2 )]
+margin_top = 72.0
+margin_bottom = 104.0
+texture_hover = ExtResource( 7 )
+
+[node name="QuitText" type="Label" parent="PauseOverlay/PauseMenu/QuitButton"]
+margin_left = 15.2254
+margin_top = 3.53711
+margin_right = 67.2254
+margin_bottom = 28.5371
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
 }

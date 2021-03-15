@@ -54,5 +54,31 @@ __meta__ = {
 texture_hover = ExtResource( 6 )
 next_scene_path = "res://src/Levels/LevelTemplate.tscn"
 
+[node name="Label" type="Label" parent="VBoxContainer/PlayButton"]
+margin_left = 13.7987
+margin_top = 3.71524
+margin_right = 65.7987
+margin_bottom = 28.7152
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="QuitButton" parent="VBoxContainer" instance=ExtResource( 3 )]
 texture_hover = ExtResource( 6 )
+
+[node name="Label2" type="Label" parent="VBoxContainer/QuitButton"]
+margin_left = 14.4287
+margin_top = 3.62299
+margin_right = 66.4287
+margin_bottom = 28.623
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}

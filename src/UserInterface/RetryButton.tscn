@@ -1,14 +1,13 @@
 [gd_scene load_steps=3 format=2]
 
+[ext_resource path="res://src/UserInterface/RetryButton.gd" type="Script" id=1]
 [ext_resource path="res://assets/OwnTiles/OwnTiles/BUTTon.png" type="Texture" id=2]
-[ext_resource path="res://src/UserInterface/QuitButton.gd" type="Script" id=3]
 
-[node name="QuitButton" type="TextureButton"]
-margin_top = 36.0
+[node name="RetryButton" type="TextureButton"]
 margin_right = 80.0
-margin_bottom = 68.0
+margin_bottom = 32.0
 texture_normal = ExtResource( 2 )
-script = ExtResource( 3 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

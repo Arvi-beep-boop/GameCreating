@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://src/Actor/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Coin/Coin.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/platform_metroidvania asset pack v1.01/tiles and background_foreground/background.png" type="Texture" id=3]
 [ext_resource path="res://assets/OwnTiles/EnviromentTiles.png" type="Texture" id=4]
+[ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=5]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -97,6 +98,11 @@ __meta__ = {
 "_edit_vertical_guides_": [ 544.434 ]
 }
 
+[node name="UserInterface" type="CanvasLayer" parent="."]
+process_priority = 100
+
+[node name="UserInterface" parent="UserInterface" instance=ExtResource( 5 )]
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -114,6 +120,77 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Coins" type="Node" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource( 2 )]
+position = Vector2( 216.231, 140.932 )
+
+[node name="Coin2" parent="Coins" instance=ExtResource( 2 )]
+position = Vector2( 232.84, 123.718 )
+
+[node name="Coin3" parent="Coins" instance=ExtResource( 2 )]
+position = Vector2( 254.59, 111.968 )
+
+[node name="Coin4" parent="Coins" instance=ExtResource( 2 )]
+position = Vector2( 336.157, 242.727 )
+
+[node name="Coin5" parent="Coins" instance=ExtResource( 2 )]
+position = Vector2( 363.907, 262.909 )
+
+[node name="Coin6" parent="Coins" instance=ExtResource( 2 )]
+position = Vector2( 416.883, 322.612 )
+
+[node name="Coin7" parent="Coins" instance=ExtResource( 2 )]
+position = Vector2( 360.723, 296.656 )
+
+[node name="Coin8" parent="Coins" instance=ExtResource( 2 )]
+position = Vector2( 411.233, 470.076 )
+
+[node name="Coin9" parent="Coins" instance=ExtResource( 2 )]
+position = Vector2( 471.285, 403.851 )
+
+[node name="Coin10" parent="Coins" instance=ExtResource( 2 )]
+position = Vector2( 493.173, 413.953 )
+
+[node name="Coin11" parent="Coins" instance=ExtResource( 2 )]
+position = Vector2( 516.745, 421.811 )
+
+[node name="Coin12" parent="Coins" instance=ExtResource( 2 )]
+position = Vector2( 595.878, 481.862 )
+
+[node name="Coin13" parent="Coins" instance=ExtResource( 2 )]
+position = Vector2( 357.117, 110.358 )
+
+[node name="Coin14" parent="Coins" instance=ExtResource( 2 )]
+position = Vector2( 370.032, 93.3486 )
+
+[node name="Coin15" parent="Coins" instance=ExtResource( 2 )]
+position = Vector2( 387.67, 80.7494 )
+
+[node name="Coin16" parent="Coins" instance=ExtResource( 2 )]
+position = Vector2( 681.191, 90.6878 )
+
+[node name="Coin17" parent="Coins" instance=ExtResource( 2 )]
+position = Vector2( 713.181, 90.1266 )
+
+[node name="Coin18" parent="Coins" instance=ExtResource( 2 )]
+position = Vector2( 669.478, 118.073 )
+
+[node name="Coin19" parent="Coins" instance=ExtResource( 2 )]
+position = Vector2( 678.397, 129.965 )
+
+[node name="Coin20" parent="Coins" instance=ExtResource( 2 )]
+position = Vector2( 691.478, 135.911 )
+
+[node name="Coin21" parent="Coins" instance=ExtResource( 2 )]
+position = Vector2( 705.749, 133.83 )
+
+[node name="Coin22" parent="Coins" instance=ExtResource( 2 )]
+position = Vector2( 716.749, 125.803 )
+
+[node name="Coin23" parent="Coins" instance=ExtResource( 2 )]
+position = Vector2( 723.884, 114.803 )
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 87.3449, 168.255 )
 
@@ -127,15 +204,6 @@ drag_margin_left = 0.1
 drag_margin_top = 0.1
 drag_margin_right = 0.1
 drag_margin_bottom = 0.1
-
-[node name="Coin" parent="." instance=ExtResource( 2 )]
-position = Vector2( 216.231, 140.932 )
-
-[node name="Coin2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 232.84, 123.718 )
-
-[node name="Coin3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 254.59, 111.968 )
 
 [node name="GrassTiles" type="TileMap" parent="."]
 position = Vector2( 1, 0 )
