@@ -77,3 +77,10 @@ shape = SubResource( 1 )
 anims/idle = SubResource( 2 )
 anims/jump = SubResource( 3 )
 anims/move = SubResource( 4 )
+
+[node name="DeathDetector" type="Area2D" parent="."]
+
+[node name="DeathShape" type="CollisionShape2D" parent="DeathDetector"]
+position = Vector2( -1.08344, 0.750847 )
+rotation = 1.5708
+shape = SubResource( 1 )
