@@ -1,7 +1,7 @@
 extends Actor
 
-const MAXSPEED = 200
-var acceleration = 0.3
+const MAXSPEED = 150
+var acceleration = 0.9
 var friction = 0.6
 var jump_timestamp = 0
 var time_now = OS.get_ticks_msec()

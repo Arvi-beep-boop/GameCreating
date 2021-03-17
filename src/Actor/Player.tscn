@@ -3,9 +3,8 @@
 [ext_resource path="res://assets/assets/Pack/GIF/SLIME_FRAMES_ROW.png" type="Texture" id=1]
 [ext_resource path="res://src/Actor/Player.gd" type="Script" id=2]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 4.35365
-height = 6.79275
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 5.24915, 7.37388 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "idle"
@@ -59,7 +58,7 @@ tracks/0/keys = {
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 1.08456, 3.8147e-06 )
-collision_mask = 8
+collision_mask = 2147483656
 script = ExtResource( 2 )
 
 [node name="SLIME_FRAMES_ROW" type="Sprite" parent="."]
@@ -69,7 +68,7 @@ hframes = 22
 frame = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1.08344, 0.750847 )
+position = Vector2( -1.08344, 0.625847 )
 rotation = 1.5708
 shape = SubResource( 1 )
 
@@ -77,13 +76,3 @@ shape = SubResource( 1 )
 anims/idle = SubResource( 2 )
 anims/jump = SubResource( 3 )
 anims/move = SubResource( 4 )
-
-[node name="DeathDetector" type="Area2D" parent="."]
-collision_mask = 2
-
-[node name="DeathShape" type="CollisionShape2D" parent="DeathDetector"]
-position = Vector2( -1.08344, 0.750847 )
-rotation = 1.5708
-shape = SubResource( 1 )
-[connection signal="body_entered" from="DeathDetector" to="." method="_on_body_entered"]
-[connection signal="body_entered" from="DeathDetector" to="." method="_on_DeathDetector_body_entered"]

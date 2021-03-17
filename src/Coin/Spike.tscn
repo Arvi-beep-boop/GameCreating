@@ -1,20 +1,21 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/OwnTiles/OwnTiles/Spike_White.png" type="Texture" id=1]
+[ext_resource path="res://assets/OwnTiles/Spikes_all.png" type="Texture" id=1]
 [ext_resource path="res://src/Coin/Spike.gd" type="Script" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 2.17805, 4.53892 )
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 0, 0, 0, -6, 2, -10, 3, -10, 5, -6, 6, -6, 8, -10, 9, -10, 11, -6, 11, 0, 0, 0 )
 
 [node name="Spike" type="Area2D"]
 collision_layer = 2
 script = ExtResource( 2 )
 
 [node name="Spike_White" type="Sprite" parent="."]
-position = Vector2( 0.608358, -7.9403 )
+position = Vector2( 6, -8 )
 texture = ExtResource( 1 )
+vframes = 2
+hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.113695, -5.48208 )
 shape = SubResource( 1 )
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

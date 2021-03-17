@@ -22,8 +22,6 @@ _global_script_class_icons={
 
 config/name="Evernite"
 run/main_scene="res://src/Screens/MainScreen.tscn"
-run/disable_stdout=true
-run/disable_stderr=true
 boot_splash/use_filter=false
 config/icon="res://icon.png"
 
@@ -34,6 +32,10 @@ PlayerData="*res://Autoload/PlayerData.tscn"
 [compression]
 
 formats/zstd/compression_level=1
+
+[debug]
+
+settings/stdout/print_fps=true
 
 [display]
 
