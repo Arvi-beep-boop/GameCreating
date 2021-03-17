@@ -79,8 +79,11 @@ anims/jump = SubResource( 3 )
 anims/move = SubResource( 4 )
 
 [node name="DeathDetector" type="Area2D" parent="."]
+collision_mask = 2
 
 [node name="DeathShape" type="CollisionShape2D" parent="DeathDetector"]
 position = Vector2( -1.08344, 0.750847 )
 rotation = 1.5708
 shape = SubResource( 1 )
+[connection signal="body_entered" from="DeathDetector" to="." method="_on_body_entered"]
+[connection signal="body_entered" from="DeathDetector" to="." method="_on_DeathDetector_body_entered"]

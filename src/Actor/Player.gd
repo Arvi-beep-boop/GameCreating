@@ -6,6 +6,7 @@ var friction = 0.6
 var jump_timestamp = 0
 var time_now = OS.get_ticks_msec()
 
+
 func _physics_process(delta: float) -> void:
 	velocity = process_movement(velocity)
 	
@@ -65,3 +66,11 @@ func process_movement(velocity: Vector2) -> Vector2:
 
 
 
+
+
+
+
+
+func _on_DeathDetector_body_entered(body):
+	if body.get_class() == "Spikes":
+		get_tree().reload_current_scene()
