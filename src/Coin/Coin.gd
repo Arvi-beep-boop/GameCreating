@@ -1,7 +1,7 @@
 extends Area2D
 
 
-export var score: = 100
+export var score: = 10
 
 onready var animationPlayer = $AnimationPlayer
 func _ready():
