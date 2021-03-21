@@ -1,0 +1,81 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/UserInterface/QuitButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/UserInterface/ChangeScreenButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/pixel_theme.tres" type="Theme" id=3]
+[ext_resource path="res://assets/platform_metroidvania asset pack v1.01/tiles and background_foreground/background.png" type="Texture" id=4]
+
+[node name="EndScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Game Over" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -53.5075
+margin_top = 16.0
+margin_right = 53.4925
+margin_bottom = 41.0
+custom_colors/font_color = Color( 0.0509804, 0.635294, 0.227451, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "game over"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -40.0
+margin_top = -34.0
+margin_right = 40.0
+margin_bottom = 34.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChangeScreenButton" parent="VBoxContainer" instance=ExtResource( 2 )]
+next_scene_path = "res://src/Screens/MainScreen.tscn"
+
+[node name="play again" type="Label" parent="VBoxContainer/ChangeScreenButton"]
+margin_left = 3.71009
+margin_top = 6.80059
+margin_right = 123.71
+margin_bottom = 34.8006
+rect_scale = Vector2( 0.6, 0.7 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "play again"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitButton" parent="VBoxContainer" instance=ExtResource( 1 )]
+
+[node name="quit" type="Label" parent="VBoxContainer/QuitButton"]
+margin_left = 14.0709
+margin_top = 2.55389
+margin_right = 66.0709
+margin_bottom = 27.5539
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
