@@ -5,12 +5,30 @@ var acceleration = 0.9
 var friction = 0.6
 var jump_timestamp = 0
 var time_now = OS.get_ticks_msec()
+var dead = false
+var death_finished = false
+var rise_finished = false
 
-
-func _physics_process(delta: float) -> void:
-	velocity = process_movement(velocity)
+func _ready():
+	$AnimationPlayer.connect("animation_finished", self, "_on_AnimationPlayer_animation_finished")
+	if rise_finished == false:
+		$AnimationPlayer.play("rise")
 	
-	velocity = move_and_slide(velocity, FLOOR_NORMAL)
+func die():
+	dead = true
+	
+func _physics_process(delta: float) -> void:
+	if dead == false and rise_finished == true:
+		velocity = process_movement(velocity)
+		velocity = move_and_slide(velocity, FLOOR_NORMAL)
+	elif dead == true:
+		if not death_finished:
+			$AnimationPlayer.play("death")
+			
+		else:
+			get_tree().reload_current_scene()
+	else:
+		velocity = move_and_slide(Vector2(0, gravity), FLOOR_NORMAL)
 	
 func process_movement(velocity: Vector2) -> Vector2:
 	if not is_on_floor():
@@ -64,13 +82,11 @@ func process_movement(velocity: Vector2) -> Vector2:
 	velocity.y = velocity.y + gravity
 	return velocity
 
-
-
-
-
-
-
-
-func _on_DeathDetector_body_entered(body):
-	if body.get_class() == "Spikes":
-		get_tree().reload_current_scene()
+func _on_AnimationPlayer_animation_finished(anim):
+	if anim == "death" and dead == true:
+		$AnimationPlayer.stop()
+		death_finished = true
+	if anim == "rise":
+		print("rise")
+		$AnimationPlayer.stop()
+		rise_finished = true
