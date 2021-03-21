@@ -15,6 +15,7 @@ func _ready():
 		$AnimationPlayer.play("rise")
 	
 func die():
+	PlayerData.score = 0
 	dead = true
 	
 func _physics_process(delta: float) -> void:
