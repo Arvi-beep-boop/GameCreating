@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://src/Actor/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Coin/Coin.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://assets/OwnTiles/EnviromentTiles.png" type="Texture" id=4]
 [ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Coin/Spike.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/LevelObjects/LevelPortal.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Autoload/PlayerData.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -234,3 +236,9 @@ tile_data = PoolIntArray( 65536, 2, 0, 65537, 2, 0, 65538, 2, 0, 65539, 2, 1, 65
 __meta__ = {
 "_edit_bone_": true
 }
+
+[node name="PlayerData" parent="." instance=ExtResource( 8 )]
+
+[node name="LevelPortal" parent="." instance=ExtResource( 7 )]
+position = Vector2( 587.878, 114.968 )
+NextLevelPath = "res://src/Screens/MainScreen.tscn"
