@@ -91,3 +91,6 @@ func _on_AnimationPlayer_animation_finished(anim):
 		print("rise")
 		$AnimationPlayer.stop()
 		rise_finished = true
+
+
+

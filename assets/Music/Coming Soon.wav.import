@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Coming Soon.wav-98be4ee956453545b1fe4ff100d18cd8.sample"
+
+[deps]
+
+source_file="res://assets/Music/Coming Soon.wav"
+dest_files=[ "res://.import/Coming Soon.wav-98be4ee956453545b1fe4ff100d18cd8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

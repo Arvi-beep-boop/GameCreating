@@ -1,0 +1,178 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Actor/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Coin/Spike.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Autoload/PlayerData.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Coin/Coin.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/LevelObjects/LevelPortal.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/platform_metroidvania asset pack v1.01/tiles and background_foreground/background.png" type="Texture" id=7]
+[ext_resource path="res://assets/OwnTiles/EnviromentTiles.png" type="Texture" id=8]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="TileSet" id=8]
+2/name = "GrassAtlas"
+2/texture = ExtResource( 8 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 80, 48 )
+2/tile_mode = 2
+2/autotile/icon_coordinate = Vector2( 0, 0 )
+2/autotile/tile_size = Vector2( 16, 16 )
+2/autotile/spacing = 0
+2/autotile/occluder_map = [  ]
+2/autotile/navpoly_map = [  ]
+2/autotile/priority_map = [  ]
+2/autotile/z_index_map = [  ]
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 1 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 3, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+
+[node name="LevelTemplate" type="Node2D"]
+__meta__ = {
+"_edit_vertical_guides_": [ 544.434 ]
+}
+
+[node name="UserInterface" type="CanvasLayer" parent="."]
+process_priority = 100
+
+[node name="UserInterface" parent="UserInterface" instance=ExtResource( 1 )]
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Spike" parent="Node" instance=ExtResource( 3 )]
+position = Vector2( 190.271, 176.18 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.1, 0 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="background2" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+margin_left = -171.353
+margin_top = -141.88
+margin_right = 635.647
+margin_bottom = 18.12
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 7 )
+stretch_mode = 2
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource( 5 )]
+position = Vector2( 105.215, 39.4622 )
+
+[node name="Coin2" parent="Coins" instance=ExtResource( 5 )]
+position = Vector2( 125.215, 39.4622 )
+
+[node name="Coin3" parent="Coins" instance=ExtResource( 5 )]
+position = Vector2( 146.215, 39.4622 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 87.3449, 168.255 )
+collision_layer = 3
+collision_mask = 1
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+smoothing_enabled = true
+smoothing_speed = 15.0
+offset_h = 0.06
+offset_v = -1.0
+drag_margin_left = 0.1
+drag_margin_top = 0.1
+drag_margin_right = 0.1
+drag_margin_bottom = 0.1
+
+[node name="GrassTiles" type="TileMap" parent="."]
+position = Vector2( 1, 0 )
+tile_set = SubResource( 8 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
+format = 1
+tile_data = PoolIntArray( 196614, 2, 1, 196615, 2, 1, 196616, 2, 1, 196617, 2, 1, 327694, 2, 1, 327695, 2, 1, 327696, 2, 1, 327697, 2, 1, 458761, 2, 1, 458762, 2, 1, 458763, 2, 1, 458764, 2, 1, 720897, 2, 1, 720898, 2, 1, 720899, 2, 1, 720900, 2, 1, 720901, 2, 1, 720902, 2, 1, 720903, 2, 1, 720904, 2, 1, 720905, 2, 1, 720906, 2, 1, 720907, 2, 1, 720908, 2, 1, 720909, 2, 1, 720910, 2, 1, 720911, 2, 1, 720912, 2, 1, 720913, 2, 1, 720914, 2, 1, 720915, 2, 1, 720916, 2, 1, 720917, 2, 1, 720918, 2, 1, 720919, 2, 1 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="PlayerData" parent="." instance=ExtResource( 4 )]
+
+[node name="LevelPortal" parent="." instance=ExtResource( 6 )]
+position = Vector2( 587.878, 114.968 )
+NextLevelPath = "res://src/Screens/MainScreen.tscn"

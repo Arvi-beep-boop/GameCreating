@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/UserInterface/Title.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/UserInterface/ChangeScreenButton.tscn" type="PackedScene" id=2]
@@ -6,10 +6,15 @@
 [ext_resource path="res://assets/platform_metroidvania asset pack v1.01/tiles and background_foreground/background.png" type="Texture" id=4]
 [ext_resource path="res://assets/pixel_theme.tres" type="Theme" id=5]
 [ext_resource path="res://assets/OwnTiles/OwnTiles/BUTTonPressed.png" type="Texture" id=6]
+[ext_resource path="res://assets/Music/Coming Soon.wav" type="AudioStream" id=7]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Control
 
+func _process(delta):
+	if $AudioStreamPlayer.playing == false:
+		$AudioStreamPlayer.play()
+	pass
 "
 
 [node name="MainScreen" type="Control"]
@@ -88,3 +93,8 @@ text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -40.0
+autoplay = true

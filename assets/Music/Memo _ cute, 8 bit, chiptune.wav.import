@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Memo _ cute, 8 bit, chiptune.wav-d547d06d7a35620abd6c56a5024dc31c.sample"
+
+[deps]
+
+source_file="res://assets/Music/Memo _ cute, 8 bit, chiptune.wav"
+dest_files=[ "res://.import/Memo _ cute, 8 bit, chiptune.wav-d547d06d7a35620abd6c56a5024dc31c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
